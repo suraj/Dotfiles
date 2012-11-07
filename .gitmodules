@@ -28,3 +28,6 @@
 [submodule "vim-files/vim/bundle/command-t"]
 	path = vim-files/vim/bundle/command-t
 	url = git://git.wincent.com/command-t.git
+[submodule "vim-files/vim/bundle/python-mode"]
+	path = vim-files/vim/bundle/python-mode
+	url = git://github.com/klen/python-mode.git

@@ -3,7 +3,10 @@
 " Pathogen settings.
 filetype off
 call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
+call pathogen#helptags()
 filetype plugin indent on
+syntax on
 
 " Make vim incompatbile to vi.
 set nocompatible
@@ -98,7 +101,7 @@ nnoremap j gj
 nnoremap k gk
 
 " Rope settings."
-inoremap <leader>j <ESC>:RopeGotoDefinition<cr>
+"inoremap <leader>j <ESC>:RopeGotoDefinition<cr>"
 
 " Get Rid of stupid Goddamned help keys
 inoremap <F1> <ESC>
@@ -198,12 +201,32 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 
 " Rope Plugin settings
-imap <leader>j <ESC>:RopeGotoDefinition<cr>
-nmap <leader>j <ESC>:RopeGotoDefinition<cr>
+imap <leader>j <ESC>:RopeGotoDefinition<cr>"
+nmap <leader>j <ESC>:RopeGotoDefinition<cr>"
 
 " Tagbar key bindings."
 nmap <leader>l <ESC>:TagbarToggle<cr>
 imap <leader>l <ESC>:TagbarToggle<cr>i
+
+
+" Add the virtualenv's site-packages to vim path
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    sys.path.insert(0, project_base_dir)
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
+
+
+" Map 'buffer resize' to CTRL + arrow keys
+nnoremap <C-left> :vertical resize -1<cr>
+nnoremap <C-down> :resize +1<cr>
+nnoremap <C-up> :resize -1<cr>
+nnoremap <C-right> :vertical resize +1<cr>"
 
 
 " =========== END Plugin Settings =========="
