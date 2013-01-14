@@ -31,3 +31,6 @@
 [submodule "vim-files/vim/bundle/python-mode"]
 	path = vim-files/vim/bundle/python-mode
 	url = git://github.com/klen/python-mode.git
+[submodule "vim-files/vim/bundle/vim-notes"]
+	path = vim-files/vim/bundle/vim-notes
+	url = https://github.com/xolox/vim-notes.git

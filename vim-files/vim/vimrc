@@ -1,5 +1,8 @@
 " ========== Vim Basic Settings ============="
 
+"Notes Directory
+:let g:notes_directory = '~/Documents/Notes'
+
 " Pathogen settings.
 filetype off
 call pathogen#runtime_append_all_bundles()
