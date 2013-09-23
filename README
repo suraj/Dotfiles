@@ -19,3 +19,13 @@ Following vim bundles are included:
 Check haridas's blog for full documentation about VIM and how to setup it. 
 -- http://haridas.in/vim-as-your-ide.html
 
+Installation Procedure
+-----------------------
+$ bash <<EOT
+git clone https://github.com/suraj/Dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+ln -s ~/.dotfiles/vim-files/vim ~/.vim
+ln -s ~/.dotfiles/vim-files/vim/vimrc ~/.vimrc
+git submodule init  
+git submodule update
+EOT
